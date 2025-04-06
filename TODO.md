@@ -1,0 +1,5 @@
+- Arrumar a geração da chave no Windows (Ambos)
+- Arrumar a exportação da chave em pt-BR (Ambos)
+- Não precisa de local para salvar (Ambos)
+- Corrigir a instalação (Ambos)
+- Adicionar e fazer as outras configurações necessárias no Windows (Ambos)
