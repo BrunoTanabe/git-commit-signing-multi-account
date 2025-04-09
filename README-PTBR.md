@@ -36,6 +36,7 @@ Bora deixar tudo rodando suave e assinado? Vamos lá! ✋
     - [Linux e MacOS](#linux-e-macos)
   - [6. Cópia das chaves GPG para colocá-las nos serviços ☁️](#6-cópia-das-chaves-gpg-para-colocá-las-nos-serviços-️)
     - [Windows, Linux e MacOS](#windows-linux-e-macos-1)
+    - [OPCIONAL](#opcional)
   - [7. Adicionando as chaves GPG nos serviços (GitHub, GitLab, Bitbucket, etc) ☁️](#7-adicionando-as-chaves-gpg-nos-serviços-github-gitlab-bitbucket-etc-️)
     - [GitHub](#github)
     - [GitLab](#gitlab)
@@ -43,7 +44,9 @@ Bora deixar tudo rodando suave e assinado? Vamos lá! ✋
   - [8. Como assinar os commits? ✍️](#8-como-assinar-os-commits-️)
     - [Assinando os commits automaticamente](#assinando-os-commits-automaticamente)
     - [Assinando os commits manualmente](#assinando-os-commits-manualmente)
-  - [9. Conclusão 🎉](#9-conclusão-)
+  - [10. Configurações adicionais e soluções de problemas 🛠️](#10-configurações-adicionais-e-soluções-de-problemas-️)
+  - [11. Conclusão 🎉](#11-conclusão-)
+  - [12. Referências 📚](#12-referências-)
   - [Quem é Bruno Tanabe?](#quem-é-bruno-tanabe)
 
 ---
@@ -139,31 +142,13 @@ Pronto! Com o GPG **oficialmente** liberado pra dar aquela força na segurança,
 
 Agora que já temos o GPG instalado e pronto pra ação, é hora de criar as chaves GPG que vão dar aquele toque especial nos seus commits. E não se preocupe, o processo é bem tranquilo e rápido! Vamos lá? 🚀
 
-Como vocês viram no [tutorial anterior](https://medium.com/@tanabebruno/como-configurar-duas-ou-mais-chaves-ssh-para-ter-diversas-contas-git-no-mesmo-computador-b9567621ce13) com as chaves **SSH**, eu gosto de isolar as chaves em uma pasta específica na raiz do meu usuário. Isso ajuda a manter tudo organizado e facilita na hora de encontrar as chaves que você precisa. Então, vamos criar uma pasta chamada `gpg` dentro do diretório `.ssh` que já criamos antes. Se você não fez isso, não tem problema, mas recomendo fortemente que faça! 😉
+Como vocês viram no [tutorial anterior](https://medium.com/@tanabebruno/como-configurar-duas-ou-mais-chaves-ssh-para-ter-diversas-contas-git-no-mesmo-computador-b9567621ce13) com as chaves **SSH**, eu gosto de isolar as chaves em uma pasta específica na raiz do meu usuário. Isso ajuda a manter tudo organizado e facilita na hora de encontrar as chaves que você precisa. No caso das chaves GPG, elas não geram um arquivo na pasta onde você está, mas sim na pasta `~/.gnupg`. Então, não se preocupe com isso. O GPG vai criar essa pasta automaticamente quando você gerar a chave. E o melhor: você não precisa se preocupar em colocar as chaves em pastas específicas, porque o GPG já faz isso por você. Então, relaxa e vamos lá! 😉
 
 ### Windows, Linux e MacOS
 
 Vamos ao passo-a-passo. Funciona igual no Windows, Linux e MacOs então aqui não tem diferença de sistema:
 
-Abra o terminal da sua máquina e garanta que você está na raiz do seu usuário. Você pode fazer isso com o comando:
-
-```bash
-    cd ~
-```
-
-Agora, vamos criar a pasta `.gpg` na raiz do seu usuário:
-
-```bash
-    mkdir .gpg
-```
-
-**Pasta criada!** Agora, vamos entrar nela:
-
-```bash
-    cd .gpg
-```
-
-Agora vem a parte importante: **gerar as chaves GPG**. Assim como no [tutorial anterior](https://medium.com/@tanabebruno/como-configurar-duas-ou-mais-chaves-ssh-para-ter-diversas-contas-git-no-mesmo-computador-b9567621ce13), eu vou criar duas chaves GPG, uma para cada uma das minhas contas, uma ´pessoal´ e outra do ´trabalho´. Caso você tenha mais de duas contas, basta criar uma chave para cada uma delas, o processo é o mesmo.
+Essa etapa é simples, basta **gerar as chaves GPG**. Assim como no [tutorial anterior](https://medium.com/@tanabebruno/como-configurar-duas-ou-mais-chaves-ssh-para-ter-diversas-contas-git-no-mesmo-computador-b9567621ce13), eu vou criar duas chaves GPG, uma para cada uma das minhas contas, uma ´pessoal´ e outra do ´trabalho´. Caso você tenha mais de duas contas, basta criar uma chave para cada uma delas, o processo é o mesmo.
 
 ```bash
     gpg --full-generate-key
@@ -171,8 +156,8 @@ Agora vem a parte importante: **gerar as chaves GPG**. Assim como no [tutorial a
 
 Nesse momento, o GPG vai te fazer uma série de perguntas. E basta você escolher as opções que mais fazem sentido pra você. Aqui estão as opções que eu escolhi:
 
-- **Tipo de chave**: (9) ECC (de assinar e cifrar) *pré-definição*
-- **Curva Elliptica**: (1) Curve 25519 *pré-definição*
+- **Tipo de chave**: (1) RSA e RSA *Não é a pré-definição, o `(9) ECC (de assinar e cifrar)`, não funciona bem no Windows*
+- **Tamanho da Chave**: 4096
 - **Expiração**: (0) Nunca expira *pré-definição* (Se você escolher uma data de expiração, você vai precisar gerar uma nova chave quando ela expirar.)
 
 ### IMPORTANTE
@@ -327,32 +312,10 @@ Agora que você já tem suas chaves GPG configuradas, é hora de copiá-las para
 
 ### Windows, Linux e MacOS
 
-Novamente, você vai precisar do seguite comando para listar as informações de cada uma das suas chaves GPG:
+Sabe o ID da chave que você utilizou para configurar o Git? Agora é hora de usá-lo pra copiar a chave pública. O comando é o mesmo em todos os sistemas operacionais, basta subir o ID da chave que você quer copiar. Por exemplo, se o ID da chave for `8AEDA33EA0CA3AF6`, o comando vai ficar assim:
 
 ```bash
-    gpg --list-secret-keys --keyid-format LONG
-```
-
-Esse comando vai listar todas as chaves GPG que você tem na sua máquina. Você vai ver algo parecido com isso:
-
-```bash
-   sec   ed25519/8AEDA33EA0CA3AF6 2024-10-24 [SC] [expires: 2025-10-24]
-         8F2F8C1E26E0069BC7FE7E258AEDA33EA0CA3AF6
-   uid                 [ultimate] Bruno Tanabe (My Personal Key) <brunotanabe@personal.com>
-   ssb   cv25519/458RRDCC83ER4528 2024-10-24 [E] [expires: 2025-10-24]
-
-   sec  ed25519/5A3F4B2D7E8C9A88 2024-10-24 [SC] [expires: 2025-10-24]
-        A8AYTC1E26AFE7E2585A3F4B2D7E8C9ADADFC9A
-   uid                 [ultimate] Bruno Tanabe (My Work Key) brunotanabe@work.com>
-   ssb   cv25519/87A3F4B283ER49A 2024-10-24 [E] [expires: 2025-10-24]
-```
-
-Agora, ao invés de anotar o ID da chave para utilizar, você deve anotar a impressão digital `fingerprint` da chave, que é a sequência de números e letras que aparece logo abaixo do ID da chave. No caso do exemplo acima, a impressão digital da chave pessoal é `8F2F8C1E26E0069BC7FE7E258AEDA33EA0CA3AF6` e a impressão digital da chave de trabalho é `A8AYTC1E26AFE7E2585A3F4B2D7E8C9ADADFC9A`.
-
-Feito isso, é hora de usá-lo pra copiar a chave pública. O comando é o mesmo em todos os sistemas operacionais, basta substituir a impressão digital da chave pela da chave que você quer copiar. Por exemplo, se for a conta pessoal a impressão digital é `8F2F8C1E26E0069BC7FE7E258AEDA33EA0CA3AF6` e o comando vai ficar assim:
-
-```bash
-   gpg --armor --export 8F2F8C1E26E0069BC7FE7E258AEDA33EA0CA3AF6
+   gpg --armor --export 8AEDA33EA0CA3AF6
 ```
 
 Esse comando vai gerar uma chave pública que você pode copiar e colar na plataforma que você quiser. O resultado vai ser algo parecido com isso:
@@ -385,6 +348,32 @@ Caso você tenha mais de uma chave, basta repetir o processo para cada uma delas
 ```
 
 Eu recomendo que você vá copiando cada chave e adicionando ela a cada serviço correspondente, então fique alternando entre os passos 7 e 8. 🔄
+
+### OPCIONAL
+
+Caso você não se lembre do ID da sua chave, você vai precisar do seguite comando para listar as informações de cada uma das suas chaves GPG:
+
+```bash
+    gpg --list-secret-keys --keyid-format LONG
+```
+
+Esse comando vai listar todas as chaves GPG que você tem na sua máquina. Você vai ver algo parecido com isso:
+
+```bash
+   sec   ed25519/8AEDA33EA0CA3AF6 2024-10-24 [SC] [expires: 2025-10-24]
+         8F2F8C1E26E0069BC7FE7E258AEDA33EA0CA3AF6
+   uid                 [ultimate] Bruno Tanabe (My Personal Key) <brunotanabe@personal.com>
+   ssb   cv25519/458RRDCC83ER4528 2024-10-24 [E] [expires: 2025-10-24]
+
+   sec  ed25519/5A3F4B2D7E8C9A88 2024-10-24 [SC] [expires: 2025-10-24]
+        A8AYTC1E26AFE7E2585A3F4B2D7E8C9ADADFC9A
+   uid                 [ultimate] Bruno Tanabe (My Work Key) brunotanabe@work.com>
+   ssb   cv25519/87A3F4B283ER49A 2024-10-24 [E] [expires: 2025-10-24]
+```
+
+Você vai ter uma chave para cada uma das contas que você tem. O que você precisa fazer agora é copiar o ID de cada uma das chaves. O ID da chave é a parte que está entre a barra `/` e o espaço, no caso do exemplo acima, o ID da chave pessoal é `8AEDA33EA0CA3AF6` e o ID da chave de trabalho é `5A3F4B2D7E8C9A88`.
+
+Após anotar a chave, basta realizar os passos de `Cópia das chaves GPG para colocá-las nos serviços` novamente, mas agora com o ID correto. E pronto!
 
 ---
 
@@ -458,13 +447,40 @@ Esse comando vai assinar o commit com a chave GPG que você configurou. E o melh
 
 ---
 
-## 9. Conclusão 🎉
+## 10. Configurações adicionais e soluções de problemas 🛠️
+
+A configuração das chaves GPG é bem tranquila, mas às vezes podem rolar uns perrengues (PRINCIPALMENTE NO WINDOWS 😠). Então, aqui vão algumas configurações adicionais e soluções de problemas que podem te ajudar a resolver qualquer pepino que apareça no caminho. 💡
+
+Muitas vezes, o seu computador não consegue encontrar o GPG, e isso pode acontecer por alguns motivos. Uma solução simples para esse problema em geral é adicionar o caminho do GPG no seu arquivo `.gitconfig`. Para isso, basta adicionar a seguinte linha no seu arquivo `.gitconfig`, substituindo o caminho pelo caminho do seu GPG (O caminho padrão do GPG no Windows é `C:/Program Files (x86)/GnuPG/bin/gpg.exe`):
+
+```bash
+   git config --global gpg.program "C:/Program Files (x86)/GnuPG/bin/gpg.exe"
+```
+
+Agora que você já entende um pouco mais sobre o GPG, você pode adicionar essa linha no seu arquivo `.gitconfig` manualmente. Para isso, basta abrir o arquivo `.gitconfig` e adicionar a seguinte linha:
+
+```ini
+   [gpg]
+      program = C:/Program Files (x86)/GnuPG/bin/gpg.exe
+```
+
+---
+
+## 11. Conclusão 🎉
 
 Olha só até onde você chegou! Já sabe gerar chaves, configurar o Git pra usar cada uma delas e ainda colar tudo direitinho nos serviços que você usa. Nada mal, hein? 🚀  
 
 Com as chaves GPG, cada commit passa a ser **seu cartão de visita** (com direito a selo de “Verified” e tudo), mostrando que a segurança é levada a sério no seu workflow. Além disso, ter chaves diferentes pra cada conta (pessoal, trabalho, frila...) deixa tudo organizado e evita confusão quando você estiver no ritmo frenético de commits.  
 
 Agora é só partir pro abraço: aproveite a sensação de ter seus commits assinados e devidamente “verificados” em qualquer repo por aí. E se der vontade de criar novas chaves pra outros projetos ou contas, você já sabe bem o caminho. Então, bora continuar explorando as infinitas possibilidades do Git e do GPG — seu histórico de commits agradece! ✨
+
+---
+
+## 12. Referências 📚
+
+- [Documentação do GPG](https://www.gnupg.org/documentation/manuals/gnupg/)
+- [Use GPG keys to sign commits](https://support.atlassian.com/bitbucket-cloud/docs/use-gpg-keys-to-sign-commits/)
+- [Como configurar duas ou mais chaves SSH para ter diversas contas Git no mesmo computador? (Windows, Linux e MacOs)](https://medium.com/@tanabebruno/como-configurar-duas-ou-mais-chaves-ssh-para-ter-diversas-contas-git-no-mesmo-computador-b9567621ce13)
 
 ---
 

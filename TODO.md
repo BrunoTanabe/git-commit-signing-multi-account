@@ -1,5 +1,5 @@
-- Arrumar a geração da chave no Windows (Ambos)
-- Arrumar a exportação da chave em pt-BR (Ambos)
-- Não precisa de local para salvar (Ambos)
-- Corrigir a instalação (Ambos)
+Mudanças: 
+- Instalação do GPG (Windows)
+- Exportação da chave pública
+- Geração da chave
 - Adicionar e fazer as outras configurações necessárias no Windows (Ambos)
