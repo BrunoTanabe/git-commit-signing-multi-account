@@ -2,7 +2,7 @@
 
 ![Banner](./images/banner.png)
 
-- [Ver no Medium](https://tanabebruno.medium.com/assinando-commits-no-git-com-várias-contas-o-guia-completo-windows-linux-e-macos-ea2232212015)
+- [Ver no Medium](https://medium.com/@tanabebruno/assinando-commits-no-git-com-várias-contas-o-guia-completo-windows-linux-e-macos-2036bafe7f6c)
 - [Ver em ingles](README.md)
 
 Se você já passou pelo desafio de configurar múltiplas chaves SSH e agora quer dar um passo além na segurança e confiabilidade dos seus commits, chegou ao lugar certo! Neste guia, vamos continuar exatamente de onde paramos no [tutorial anterior](https://medium.com/@tanabebruno/como-configurar-duas-ou-mais-chaves-ssh-para-ter-diversas-contas-git-no-mesmo-computador-b9567621ce13), só que agora falando de chaves GPG para assinar seus commits. Assim, você ganha aquele selo de “Verified” (mais estiloso que qualquer check do Twitter) e garante que todo mundo saiba que quem fez o commit foi realmente você! 🤩
@@ -11,7 +11,9 @@ Sabe aquelas empresas que exigem commits assinados, ou aquele momento em que voc
 
 Bora deixar tudo rodando suave e assinado? Vamos lá! ✋
 
-**IMPORTANTE**: Esse tutorial é a segunda parte de uma série. Se você ainda não leu o primeiro, recomendo dar uma olhada no tutorial de [Como configurar duas ou mais chaves SSH para ter diversas contas Git no mesmo computador? (Windows, Linux e MacOs)](https://medium.com/@tanabebruno/como-configurar-duas-ou-mais-chaves-ssh-para-ter-diversas-contas-git-no-mesmo-computador-b9567621ce13) antes de continuar aqui, porque vou continuar esse tutorial de onde o último parou e você precisa fazer algumas coonfigurações que foram feitas e explicadas lá. Além disso, você vai entender melhor como tudo se conecta e fica mais fácil de acompanhar. 😉
+![Verified Commit Example](./images/verified-commit.png)
+
+**IMPORTANTE**: Esse tutorial é a segunda parte de uma série. Se você ainda não leu o primeiro, recomendo dar uma olhada no tutorial de [Como configurar duas ou mais chaves SSH para ter diversas contas Git no mesmo computador? (Windows, Linux e MacOs)](https://medium.com/@tanabebruno/como-configurar-duas-ou-mais-chaves-ssh-para-ter-diversas-contas-git-no-mesmo-computador-b9567621ce13) antes de continuar aqui, porque vou continuar esse tutorial de onde o último parou e você precisa fazer algumas configurações que foram feitas e explicadas lá. Além disso, você vai entender melhor como tudo se conecta e fica mais fácil de acompanhar. 😉
 
 ---
 
@@ -44,9 +46,9 @@ Bora deixar tudo rodando suave e assinado? Vamos lá! ✋
   - [8. Como assinar os commits? ✍️](#8-como-assinar-os-commits-️)
     - [Assinando os commits automaticamente](#assinando-os-commits-automaticamente)
     - [Assinando os commits manualmente](#assinando-os-commits-manualmente)
-  - [10. Configurações adicionais e soluções de problemas 🛠️](#10-configurações-adicionais-e-soluções-de-problemas-️)
-  - [11. Conclusão 🎉](#11-conclusão-)
-  - [12. Referências 📚](#12-referências-)
+  - [9. Configurações adicionais e soluções de problemas 🛠️](#9-configurações-adicionais-e-soluções-de-problemas-️)
+  - [10. Conclusão 🎉](#10-conclusão-)
+  - [11. Referências 📚](#11-referências-)
   - [Quem é Bruno Tanabe?](#quem-é-bruno-tanabe)
 
 ---
@@ -447,9 +449,9 @@ Esse comando vai assinar o commit com a chave GPG que você configurou. E o melh
 
 ---
 
-## 10. Configurações adicionais e soluções de problemas 🛠️
+## 9. Configurações adicionais e soluções de problemas 🛠️
 
-A configuração das chaves GPG é bem tranquila, mas às vezes podem rolar uns perrengues (PRINCIPALMENTE NO WINDOWS 😠). Então, aqui vão algumas configurações adicionais e soluções de problemas que podem te ajudar a resolver qualquer pepino que apareça no caminho. 💡
+A configuração das chaves GPG é bem tranquila, mas às vezes podem rolar uns perrengues *(principalmente no Windows 😠)*. Então, aqui vão algumas configurações adicionais e soluções de problemas que podem te ajudar a resolver qualquer pepino que apareça no caminho. 💡
 
 Muitas vezes, o seu computador não consegue encontrar o GPG, e isso pode acontecer por alguns motivos. Uma solução simples para esse problema em geral é adicionar o caminho do GPG no seu arquivo `.gitconfig`. Para isso, basta adicionar a seguinte linha no seu arquivo `.gitconfig`, substituindo o caminho pelo caminho do seu GPG (O caminho padrão do GPG no Windows é `C:/Program Files (x86)/GnuPG/bin/gpg.exe`):
 
@@ -466,7 +468,7 @@ Agora que você já entende um pouco mais sobre o GPG, você pode adicionar essa
 
 ---
 
-## 11. Conclusão 🎉
+## 10. Conclusão 🎉
 
 Olha só até onde você chegou! Já sabe gerar chaves, configurar o Git pra usar cada uma delas e ainda colar tudo direitinho nos serviços que você usa. Nada mal, hein? 🚀  
 
@@ -476,7 +478,7 @@ Agora é só partir pro abraço: aproveite a sensação de ter seus commits assi
 
 ---
 
-## 12. Referências 📚
+## 11. Referências 📚
 
 - [Documentação do GPG](https://www.gnupg.org/documentation/manuals/gnupg/)
 - [Use GPG keys to sign commits](https://support.atlassian.com/bitbucket-cloud/docs/use-gpg-keys-to-sign-commits/)
