@@ -21,17 +21,17 @@ Ready to get everything running smoothly and signed? Let’s go! ✋
 
 **Let’s take a peek at what you’ll learn in this guide?** 🔍
 
-  - [1. What are GPG keys? 🤔](#1-what-are-gpg-keys-)
-  - [2. Why set up more than one GPG key? 🔒](#2-why-set-up-more-than-one-gpg-key-)
-  - [3. Prerequisites: ensuring GPG is installed 🔧](#3-prerequisites-ensuring-gpg-is-installed-)
-  - [4. Generating new GPG keys 🔑](#4-generating-new-gpg-keys-)
-  - [5. Setting Up Git to Use the Correct GPG Keys 🔧](#5-setting-up-git-to-use-the-correct-gpg-keys-)
-  - [6. Copying Your GPG Keys to Add Them to Services ☁️](#6-copying-your-gpg-keys-to-add-them-to-services-️)
-  - [7. Adding GPG Keys to Services (GitHub, GitLab, Bitbucket, etc) ☁️](#7-adding-gpg-keys-to-services-github-gitlab-bitbucket-etc-️)
-  - [8. How to Sign Commits ✍️](#8-how-to-sign-commits-️)
-  - [9. Additional Settings and Troubleshooting 🛠️](#9-additional-settings-and-troubleshooting-️)
-  - [10. Conclusion 🎉](#10-conclusion-)
-  - [11. References 📚](#11-references-)
+- [1. What are GPG keys? 🤔](#1-what-are-gpg-keys-)
+- [2. Why set up more than one GPG key? 🔒](#2-why-set-up-more-than-one-gpg-key-)
+- [3. Prerequisites: ensuring GPG is installed 🔧](#3-prerequisites-ensuring-gpg-is-installed-)
+- [4. Generating new GPG keys 🔑](#4-generating-new-gpg-keys-)
+- [5. Setting Up Git to Use the Correct GPG Keys 🔧](#5-setting-up-git-to-use-the-correct-gpg-keys-)
+- [6. Copying Your GPG Keys to Add Them to Services ☁️](#6-copying-your-gpg-keys-to-add-them-to-services-️)
+- [7. Adding GPG Keys to Services (GitHub, GitLab, Bitbucket, etc) ☁️](#7-adding-gpg-keys-to-services-github-gitlab-bitbucket-etc-️)
+- [8. How to Sign Commits ✍️](#8-how-to-sign-commits-️)
+- [9. Additional Settings and Troubleshooting 🛠️](#9-additional-settings-and-troubleshooting-️)
+- [10. Conclusion 🎉](#10-conclusion-)
+- [11. References 📚](#11-references-)
 
 ---
 
