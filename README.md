@@ -21,35 +21,17 @@ Ready to get everything running smoothly and signed? Let’s go! ✋
 
 **Let’s take a peek at what you’ll learn in this guide?** 🔍
 
-- [SIGNING COMMITS IN GIT WITH MULTIPLE ACCOUNTS: THE COMPLETE GUIDE (WINDOWS, LINUX, AND MACOS)](#signing-commits-in-git-with-multiple-accounts-the-complete-guide-windows-linux-and-macos)
-  - [Table of Contents 📌](#table-of-contents-)
   - [1. What are GPG keys? 🤔](#1-what-are-gpg-keys-)
   - [2. Why set up more than one GPG key? 🔒](#2-why-set-up-more-than-one-gpg-key-)
   - [3. Prerequisites: ensuring GPG is installed 🔧](#3-prerequisites-ensuring-gpg-is-installed-)
-    - [Windows](#windows)
-    - [Linux](#linux)
-    - [MacOS](#macos)
   - [4. Generating new GPG keys 🔑](#4-generating-new-gpg-keys-)
-    - [Windows, Linux, and MacOS](#windows-linux-and-macos)
-    - [IMPORTANT](#important)
   - [5. Setting Up Git to Use the Correct GPG Keys 🔧](#5-setting-up-git-to-use-the-correct-gpg-keys-)
-    - [Windows, Linux, and macOS (common steps)](#windows-linux-and-macos-common-steps)
-    - [Windows](#windows-1)
-    - [Linux and macOS](#linux-and-macos)
   - [6. Copying Your GPG Keys to Add Them to Services ☁️](#6-copying-your-gpg-keys-to-add-them-to-services-️)
-    - [Windows, Linux, and MacOS](#windows-linux-and-macos-1)
-    - [OPTIONAL](#optional)
   - [7. Adding GPG Keys to Services (GitHub, GitLab, Bitbucket, etc) ☁️](#7-adding-gpg-keys-to-services-github-gitlab-bitbucket-etc-️)
-    - [GitHub](#github)
-    - [GitLab](#gitlab)
-    - [BitBucket](#bitbucket)
   - [8. How to Sign Commits ✍️](#8-how-to-sign-commits-️)
-    - [Signing Commits Automatically](#signing-commits-automatically)
-    - [Signing Commits Manually](#signing-commits-manually)
   - [9. Additional Settings and Troubleshooting 🛠️](#9-additional-settings-and-troubleshooting-️)
   - [10. Conclusion 🎉](#10-conclusion-)
   - [11. References 📚](#11-references-)
-  - [Who is Bruno Tanabe?](#who-is-bruno-tanabe)
 
 ---
 
