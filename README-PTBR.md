@@ -21,17 +21,17 @@ Bora deixar tudo rodando suave e assinado? Vamos lá! ✋
 
 **Bora ver o que você vai ver nesse guia?** 🔍
 
-[1. O que são chaves GPG? 🤔](#1-o-que-são-chaves-gpg-)
-[2. Por que configurar mais de uma chave GPG? 🔒](#2-por-que-configurar-mais-de-uma-chave-gpg-)
-[3. Pré-requisitos: assegurando que o GPG está instalado 🔧](#3-pré-requisitos-assegurando-que-o-gpg-está-instalado-)
-[4. Gerando as novas chaves GPG 🔑](#4-gerando-as-novas-chaves-gpg-)
-[5. Configurando o Git para usar as chaves GPG corretas 🔧](#5-configurando-o-git-para-usar-as-chaves-gpg-corretas-)
-[6. Cópia das chaves GPG para colocá-las nos serviços ☁️](#6-cópia-das-chaves-gpg-para-colocá-las-nos-serviços-️)
-[7. Adicionando as chaves GPG nos serviços (GitHub, GitLab, Bitbucket, etc) ☁️](#7-adicionando-as-chaves-gpg-nos-serviços-github-gitlab-bitbucket-etc-️)
-[8. Como assinar os commits? ✍️](#8-como-assinar-os-commits-️)
-[9. Configurações adicionais e soluções de problemas 🛠️](#9-configurações-adicionais-e-soluções-de-problemas-️)
-[10. Conclusão 🎉](#10-conclusão-)
-[11. Referências 📚](#11-referências-)
+- [1. O que são chaves GPG? 🤔](#1-o-que-são-chaves-gpg-)
+- [2. Por que configurar mais de uma chave GPG? 🔒](#2-por-que-configurar-mais-de-uma-chave-gpg-)  
+- [3. Pré-requisitos: assegurando que o GPG está instalado 🔧](#3-pré-requisitos-assegurando-que-o-gpg-está-instalado-)
+- [4. Gerando as novas chaves GPG 🔑](#4-gerando-as-novas-chaves-gpg-)
+- [5. Configurando o Git para usar as chaves GPG corretas 🔧](#5-configurando-o-git-para-usar-as-chaves-gpg-corretas-)
+- [6. Cópia das chaves GPG para colocá-las nos serviços ☁️](#6-cópia-das-chaves-gpg-para-colocá-las-nos-serviços-️)
+- [7. Adicionando as chaves GPG nos serviços (GitHub, GitLab, Bitbucket, etc) ☁️](#7-adicionando-as-chaves-gpg-nos-serviços-github-gitlab-bitbucket-etc-️)
+- [8. Como assinar os commits? ✍️](#8-como-assinar-os-commits-️)
+- [9. Configurações adicionais e soluções de problemas 🛠️](#9-configurações-adicionais-e-soluções-de-problemas-️)
+- [10. Conclusão 🎉](#10-conclusão-)
+- [11. Referências 📚](#11-referências-)
 
 ---
 
